@@ -10,7 +10,7 @@ pipeline {
     }
     post {
         always {
-            discordSend discord: "Jenkins Test", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME webhookURL: ${DISCORD_WEBHOOK}
+            discordSend link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: '${DISCORD_WEBHOOK}'
         }
     }
 }
